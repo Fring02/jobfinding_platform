@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>ISPH.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ISPH.Data\ISPH.Data.csproj" />
+      <ProjectReference Include="..\ISPH.Domain\ISPH.Domain.csproj" />
+      <ProjectReference Include="..\ISPH.Shared\ISPH.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+      <PackageReference Include="MailKit" Version="3.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+      <PackageReference Include="MimeKit" Version="3.3.0" />
+      <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.19.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+.signupForm, signinForm{
+    border-radius: 25px;
+}
+#companySignUp{
+    border: none;
+}
+.student, .employer{
+    border: none;
+}
+.roleImage{
+    max-width: 50%;
+    margin: 0 auto;
+}
+#studentInfo{
+    border: none;
+}

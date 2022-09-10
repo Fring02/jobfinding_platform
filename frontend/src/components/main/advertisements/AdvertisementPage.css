@@ -1,0 +1,6 @@
+.employer-card{
+    width: 15rem;
+}
+.employer-card .card-text{
+    text-decoration: underline;
+}
