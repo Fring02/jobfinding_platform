@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using ISPH.Domain.Enums;
 using ISPH.Domain.Models.Advertisements;
 using ISPH.Shared.Dtos.Advertisements;
 

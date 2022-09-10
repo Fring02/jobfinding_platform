@@ -8,6 +8,7 @@ using ISPH.Application.Services.Base;
 using ISPH.Data.Contexts;
 using ISPH.Data.Extensions;
 using ISPH.Data.Filtering;
+using ISPH.Domain.Enums;
 using ISPH.Domain.Models.Advertisements;
 using ISPH.Shared.Dtos.Advertisements;
 using ISPH.Shared.Interfaces.Advertisements;

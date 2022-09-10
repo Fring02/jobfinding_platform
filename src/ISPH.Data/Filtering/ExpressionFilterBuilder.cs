@@ -8,9 +8,8 @@ public class ExpressionFilterBuilder
 {
     public ExpressionFilterBuilder With(Expression<Func<Advertisement, bool>> predicate)
     {
-        var invokedExpr = Expression.Invoke(predicate, Result.Parameters);
-        Result = Expression.Lambda<Func<Advertisement, bool>>
-            (Expression.AndAlso(Result.Body, invokedExpr), Result.Parameters);
+        Result = Expression.Lambda<Func<Advertisement, bool>>(Expression
+            .AndAlso(Result.Body, Expression.Invoke(predicate, Result.Parameters)), Result.Parameters);
         return this;
     }
 

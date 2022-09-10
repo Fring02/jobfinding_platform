@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using ISPH.Domain.Enums;
 using ISPH.Domain.Models.Base;
 using ISPH.Domain.Models.Users;
 
@@ -12,29 +13,19 @@ public class Advertisement : BaseEntity<Guid>
     public WorkTime WorkTimeType { get; set; }
 
     [NotMapped]
-    public string? WorkTime
-    {
-        get
+    public string? WorkTime => WorkTimeType switch
         {
-            var name = Enum.GetName(WorkTimeType);
-            return name switch
-            {
-                "Undefined" => "Not important",
-                "FullTime" => "Full-time",
-                "PartTime" => "Part-time",
-                _ => name
-            };
-        }
-    }
+            Enums.WorkTime.Undefined => "Not important",
+            Enums.WorkTime.FullTime => "Full-time",
+            Enums.WorkTime.PartTime => "Part-time",
+            Enums.WorkTime.Individual => "Individual",
+            _ => null
+        };
+
     public EmploymentType EmploymentType { get; set; }
     [NotMapped]
-    public string? Employment {
-        get
-        {
-           var name = Enum.GetName(EmploymentType);
-           return name == "Undefined" ? "Not important" : name;
-        }
-    }
+    public string? Employment => EmploymentType == EmploymentType.Undefined ? "Not important" : Enum.GetName(EmploymentType);
+
     public DateTime PostedAt { get; set; } = DateTime.Now;
     [NotMapped]
     public string PostedDateToString => PostedAt.ToLongDateString();
@@ -45,6 +36,3 @@ public class Advertisement : BaseEntity<Guid>
     public IEnumerable<FeaturedAdvertisement> FeaturedAdvertisements { get; set; }
     public IEnumerable<AdvertisementResponse> Responses { get; set; }
 }
-
-public enum WorkTime { Undefined, FullTime, PartTime, Individual }
-public enum EmploymentType { Undefined, Office, Remote }

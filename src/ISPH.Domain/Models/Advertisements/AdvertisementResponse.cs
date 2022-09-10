@@ -1,9 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using ISPH.Domain.Models.Base;
+﻿using ISPH.Domain.Models.Base;
 using ISPH.Domain.Models.Users;
 
 namespace ISPH.Domain.Models.Advertisements;
-[Table("AdvertisementResponse")]
 public class AdvertisementResponse : BaseEntity<int>
 {
     public Guid AdvertisementId { get; set; }
